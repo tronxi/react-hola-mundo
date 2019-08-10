@@ -10,6 +10,23 @@ const user = {
   firstName: 'Sergio',
   lastName: 'Garcia'
 };
+
+class Clock extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {date: new Date()};
+    }
+
+    render() {
+        return (
+            <div>
+                <h1>Hello, world!</h1>
+                <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+            </div>
+        );
+    }
+}
+
 function Componente(props) {
   return (
     <div>
@@ -23,6 +40,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+          <Clock/>
         <img src={logo} className="App-logo" alt="logo" />
         <Componente nombre="sergio" apellido={user.lastName}/>
         {formatName(user)}
